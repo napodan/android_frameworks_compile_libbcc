@@ -65,7 +65,7 @@ LOCAL_STATIC_LIBRARIES :=	\
 	libLLVMSystem	\
 	libLLVMAnalysis
 
-LOCAL_SHARED_LIBRARIES := libdl libcutils libstlport
+LOCAL_SHARED_LIBRARIES := libdl libcutils liblog libstlport
 
 LOCAL_C_INCLUDES :=	\
 	$(LOCAL_PATH)/include
@@ -91,6 +91,7 @@ LOCAL_SRC_FILES := bcc.cpp bcc_runtime.c
 
 LOCAL_STATIC_LIBRARIES :=	\
 	libcutils	\
+	liblog \
 	libLLVMX86CodeGen	\
 	libLLVMX86Info	\
 	libLLVMBitReader	\
