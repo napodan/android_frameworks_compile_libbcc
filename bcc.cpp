@@ -373,7 +373,7 @@ class Compiler {
   static void LLVMErrorHandler(void *UserData, const std::string &Message) {
     std::string* Error = static_cast<std::string*>(UserData);
     Error->assign(Message);
-    LOGE("%s", Message.c_str());
+    ALOGE("%s", Message.c_str());
     return;
     //fprintf(stderr, "%s\n", Message.c_str());
     //exit(1);
@@ -2577,7 +2577,7 @@ class Compiler {
     SB = llvm::MemoryBuffer::getMemBuffer(
             llvm::StringRef(bitcode, bitcodeSize));
     if(SB == NULL) {
-      LOGE("Error reading input Bitcode into memory");
+      ALOGE("Error reading input Bitcode into memory");
       setError("Error reading input Bitcode into memory");
       goto on_bcc_load_module_error;
     }
@@ -2789,7 +2789,7 @@ on_bcc_load_module_error:
       return false;
     }
 
-    //    LOGE(getErrorMessage());
+    //    ALOGE(getErrorMessage());
     return true;
   }
 
